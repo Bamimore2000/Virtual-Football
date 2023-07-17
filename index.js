@@ -114,6 +114,7 @@ resetting.addEventListener("click", ()=>{
 
     
 function reset(num){
+    hasPlayed = false;
     num.forEach((score)=>{
         score.textContent = 0;
         timingChecker(time);
