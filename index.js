@@ -116,6 +116,8 @@ resetting.addEventListener("click", ()=>{
 function reset(num){
     num.forEach((score)=>{
         score.textContent = 0;
+        timingChecker(time);
+        
     })
 }
 
@@ -128,15 +130,14 @@ leagues.forEach((league)=>{
         leagues.forEach((league)=>{
             league.classList.remove("current");
             reset(scores);
-
         })
+        
         let target = e.currentTarget.id;
         let data = document.getElementById(target)
         currentTeam = target;
         data.classList.add("current");
         if (target === "englishTeams"){
-            renderTeams(englishTeams)
-            
+            renderTeams(englishTeams)  
         }
         else if (target === "laLiga"){
             renderTeams(laliga)
